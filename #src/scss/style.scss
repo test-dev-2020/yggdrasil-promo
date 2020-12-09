@@ -1,0 +1,232 @@
+@import 'libs/normalize';
+@import './fonts';
+@import './global';
+body {
+  line-height: 1.2;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+.content-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.hero {
+  background-image: url(../img/hero-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 52px 0 89px;
+  overflow: hidden;
+}
+.hero-logo {
+  text-align: center;
+  img {
+    width: 303px;
+  }
+}
+.hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  img:nth-child(1) {
+    margin-left: 180px;
+  }
+  img:nth-child(2) {
+    margin-left: -180px;
+  }
+}
+.hero-anchor {
+  position: absolute;
+  left: 90%;
+  & li {
+    cursor: pointer;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    margin: 20px 0;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: relative;
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  & li.active {
+    background-color: white;
+    cursor: auto;
+  }
+}
+.candy {
+  position: absolute;
+
+  z-index: 50;
+  &.candy-1 {
+    top: -109px;
+    left: -34px;
+  }
+  &.candy-2 {
+    right: 0;
+    top: -140px;
+  }
+  &.candy-3 {
+    top: -73px;
+    left: 40px;
+  }
+  &.candy-4 {
+    right: 0;
+    bottom: -60px;
+  }
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 28px 0 60px;
+  &.section-2,
+  &.section-4 {
+    background-color: #15183f;
+  }
+  &.section-1,
+  &.section-3 {
+    background-color: #0f1238;
+  }
+}
+
+.section__sub-title {
+  font-weight: 500;
+  font-size: 28px;
+  &.closed {
+    color: #fd4132;
+  }
+  &.open {
+    color: #4acb6e;
+  }
+  &.coming {
+    color: #8385a8;
+  }
+}
+.section__title {
+  font-size: 74px;
+  font-weight: 900;
+  font-style: italic;
+  &.section-1 {
+    background: linear-gradient(180deg, #0c90ba 0%, #ffffff 79.09%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.section-2 {
+    background: linear-gradient(180deg, #0cba3d 0%, #ffffff 79.09%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.section-3 {
+    background: linear-gradient(180deg, #4e0cba 0%, #ffffff 79.09%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.section-4 {
+    background: linear-gradient(180deg, #fd4432 0%, #ffffff 79.09%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.section__time {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 28px;
+  margin-bottom: 28px;
+  &.section-2 {
+    margin-bottom: 0;
+  }
+}
+
+.section-games__title {
+  font-weight: 900;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.section__slider {
+  display: flex;
+  justify-content: center !important;
+  flex-direction: row;
+  align-items: center;
+}
+.slide {
+  width: 250px;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 100;
+
+  .slide-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.25);
+  }
+  &:hover .slide-bg {
+    display: block;
+  }
+
+  &:hover a {
+    display: inline-block;
+  }
+  img {
+    max-width: 250px;
+  }
+  max-width: 250px;
+  a {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+    padding: 8px 50px;
+    background: #ff3e3e;
+    border-radius: 5px;
+  }
+}
+.section-details {
+  margin-top: 46px;
+  color: #101125;
+  font-weight: 900;
+  font-size: 32px;
+  padding: 21px 28px;
+  background: #ffffff;
+  border-radius: 25px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.section__time-text {
+  font-size: 25px;
+  font-weight: 400;
+  div:nth-child(2) {
+    margin: 10px 0;
+    font-size: 22px;
+    font-style: italic;
+  }
+}
+
+.swiper-container {
+  width: 1150px;
+}
