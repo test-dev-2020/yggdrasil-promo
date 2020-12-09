@@ -52,10 +52,30 @@ document.addEventListener('DOMContentLoaded', function(){
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
+    freeMode: false,
       autoplay: {
         delay: 1500,
         disableOnInteraction: false,
       },
+      breakpoints: {
+        300: {
+          slidesPerView: 1,
+          spaceBetween: 30
+        },
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+          slidesPerGroup: 2,
+        },
+        800: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        1150: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      }
     
   });
 
