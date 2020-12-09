@@ -45,8 +45,11 @@ body {
   }
 }
 .hero-anchor {
-  position: absolute;
-  left: 90%;
+  position: fixed;
+  left: 95%;
+  z-index: 100;
+  top: 46%;
+  transform: translateY(-50%);
   & li {
     cursor: pointer;
     list-style: none;
@@ -64,7 +67,7 @@ body {
       bottom: 0;
     }
   }
-  & li.active {
+  & li.active-link {
     background-color: white;
     cursor: auto;
   }
@@ -72,7 +75,7 @@ body {
 .candy {
   position: absolute;
 
-  z-index: 50;
+  z-index: 1;
   &.candy-1 {
     top: -109px;
     left: -34px;
@@ -159,12 +162,7 @@ body {
   font-size: 32px;
   margin-bottom: 12px;
 }
-.section__slider {
-  display: flex;
-  justify-content: center !important;
-  flex-direction: row;
-  align-items: center;
-}
+
 .slide {
   width: 250px;
   transition: all 0.3s;
@@ -229,4 +227,90 @@ body {
 
 .swiper-container {
   width: 1150px;
+  z-index: auto;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(14, 20, 28, 0.7);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1011;
+  &.is--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.overflow {
+  overflow: hidden;
+}
+.popup-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 1110px;
+  padding: 20px 25px;
+  font-weight: 400;
+  font-size: 17px;
+  background: #0b0e29;
+  border: 1px solid #ffffff;
+  border-radius: 35px;
+  text-align: left;
+  p {
+    color: #e4e7ff;
+    margin: 15px 0;
+    line-height: 1.4;
+    span {
+      display: inline-block;
+      margin: 10px 0 10px 40px;
+    }
+    span.strong {
+      display: inline;
+      margin: auto;
+      font-weight: 900;
+    }
+    .list {
+      position: relative;
+      display: block;
+      font-weight: 900;
+      padding-left: 15px;
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        background-color: white;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.popup-close {
+  cursor: pointer;
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #101125;
+  font-size: 32px;
+  font-weight: 900;
+  border-radius: 50%;
 }

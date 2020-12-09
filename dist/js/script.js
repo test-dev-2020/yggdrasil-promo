@@ -48,13 +48,14 @@ document.addEventListener('DOMContentLoaded', function(){
   
   var swiper = new Swiper('.swiper-container', {
     slidesPerView: 4,
+    spaceBetween: 30,
     slidesPerGroup: 1,
-      spaceBetween: 30,
-      freeMode: false,
-      // autoplay: {
-      //   delay: 1500,
-      //   disableOnInteraction: false,
-      // },
+    loop: true,
+    loopFillGroupWithBlank: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
     
   });
 
@@ -76,7 +77,66 @@ function clickHandler(e) {
   });
 }
   
+const modalTriggers = document.querySelectorAll('.popup-trigger')
+const bodyBlackout = document.querySelector('.body-blackout')
+const body = document.body
+const popup = document.querySelector('.popup')
 
+modalTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const { popupTrigger } = trigger.dataset
+    const popupModal = document.querySelector(`[data-popup-modal="${popupTrigger}"]`)
+
+
+  const close = () =>{
+    popupModal.classList.remove('is--visible')
+    body.classList.remove('overflow')
+  }
+
+
+    popupModal.classList.add('is--visible')
+    body.classList.add('overflow')
+    
+    popupModal.querySelector('.popup-modal__close').addEventListener('click', close)
+    popup.addEventListener('click', (e)=>{
+      if(e.target===popup || e.keyCode === 27 ){
+        close()
+      }
+    })
+
+
+
+    bodyBlackout.addEventListener('click', close)
+    document.addEventListener('keydown',(e)=>{
+  if(e.code ==="Escape"){
+    close()
+  }
+})
+  })
 })
 
+
+
+const spyScrolling = () => {
+  const sections = document.querySelectorAll(".section");
+
+  window.onscroll = () => {
+    const scrollPos =
+      document.documentElement.scrollTop || document.body.scrollTop;
+
+    for (let s in sections)
+      if (sections.hasOwnProperty(s) && sections[s].offsetTop <= scrollPos) {
+        const id = sections[s].id;
+        document.querySelector(".active-link").classList.remove("active-link");
+        document
+          .querySelector(`a[href*=${id}]`)
+          .parentNode.classList.add("active-link");
+      }
+  };
+};
+
+
+spyScrolling();
+
+})
 
