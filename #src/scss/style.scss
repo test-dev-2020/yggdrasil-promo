@@ -438,6 +438,10 @@ body {
       width: 120px;
     }
   }
+  .popup-box p span {
+    display: inline-block;
+    margin: 10px 0 10px 15px;
+  }
 }
 
 @media (max-width: 500px) {
