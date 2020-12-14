@@ -198,6 +198,11 @@ body {
   display: inline-block;
   cursor: pointer;
 }
+.section-details.section-details-spin {
+  font-size: 20px;
+  padding: 15px 30px;
+  margin: 20px 0;
+}
 
 .section__time-text {
   font-size: 25px;
@@ -237,6 +242,10 @@ body {
 .popup-content {
   overflow-y: auto;
   max-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .overflow {
